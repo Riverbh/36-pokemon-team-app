@@ -18,9 +18,11 @@ const GlobalContexProvider = (props) => {
                 return state
         }
     }
+
+    const [state, dispatch] = useReducer(reducer, initialState)
     
     return (
-        <GlobalContex.Provider value={{}}>
+        <GlobalContex.Provider value={{state, dispatch}}>
             {props.children}
         </GlobalContex.Provider>
     )
